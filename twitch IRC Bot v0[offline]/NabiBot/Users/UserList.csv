@@ -1,0 +1,7 @@
+shuruni,"[1000000, 9001, 0]",9001,900100,Standings.Shuruni()
+boruma,"[2000, 50, 10]",5,500,Standings.Veteran()
+protoxider,"[2000, 50, 11]",12,1200,Standings.NoLifer()
+maerthyu,"[2000, 50, 12]",10,1000,Standings.CommonFace()
+Pots_,"[2000, 50, 13]",14,1400,Standings.Pots_()
+saepe,"[2000, 50, 14]",13,1300,Standings.Fledgling()
+deathbatkill,"[2000, 50, 15]",11,1100,Standings.SpecialPerson()
