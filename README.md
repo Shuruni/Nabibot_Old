@@ -1,2 +1,705 @@
 # Nabibot_Old
 This is all of the old code to an IRC Chatbot that I coded back in high school after I had just decided that I was goingto take coding and programming seriously. The code is sloppy as crud and the organization is terrible, as well as the dependencies that I was using being a ton of things that I'm not even sure where to get the libraries anymore. This said, I enjoyed developing Nabibot while livestreaming various games on my twitch and my followers would always help me to work out the kinks in the code and suggest new features. I am currently in the process of rewriting Nabibot now that I have a little bit more time to consider getting back into streaming again.
+
+
+Below is a Copy-Paste of the "changelog-Todo.nabi" file that I had used to originally log my changes between revisions
+V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V V
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+NabiBot_v1.55  changelog                                  Shuruni Hikaru
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Nabi's Birthday is April 9, 2016 ^w^
+_____________Key[OUTDATED]_____________
+#: denotes a comment for extra info #like here #and here... #oh and here
+add: obviously it means to skip over it and do better things with your life -3- #refers to command additions
+	main: options on a command that are neccesary to include for the command to make sense... or not make sense ^_^;
+	opt: options on a command that are optional and because of that will probably never get done >.<
+	{}: used to denote an option that is written exactly as it is shown and has sub-options
+	<>: used to denote an option that requires actually using your brain to type a specific query
+	[]: used to denote an option that is optional. would you like some options with that? #also requires the use of that thing you call a brain :O
+	(): if you dont want to be confused, ignore it, it denotes code stuff and hidden options #in depth --> used to denote a hidden option that I need to remember to code for use somewhere else in the options list ^_^;
+create: basically refers to things to do in coding... or, ya know.. things to procrastinate...
+optimize: refers to things to do that will either make my life easier in the future, or make the program run better
+category: a header for grouping several commands that are related but would be strange as indiviual options
+cooldown: how often the command can be used
+noMod: basically what the command should do if you don't use a modifier
+#c#co#com#comm#comme#commen#comment#comments#comments #comments -#comments -3#comments -3-#k I'm done ;)
+
+____________TODO____________
+category -song- #song related
+	main:
+		!request: #plays the youtube song link
+			cooldown: default
+		
+category -anime-
+	main:
+		!anime: #MAL integration
+			main: 
+				<anime>: prints the data on the stated anime as provided by MAL
+			opt: 
+				{reccomend} <genre>: returns a random anime of <genre> with an average rating of at least 6 stars
+
+				
+category -!Osu-  #category for all Osu! related commands
+	main:
+		!stats: displays My Osu! statistics :3
+			[player]: displays the Osu! statistics of [player]
+		!req: request maps for me to play in Osu!
+	opt:
+		!randomMap: prints the NP data and link to a random map in my library
+			[{stars}] <["=, >=, >, <=, <"]> <float>: print random map from library that is ["=, >=, >, <=, <"] <float> stars
+			[{CS}] <["=, >=, >, <=, <"]> <float>: print random map from library with a CS ["=, >=, >, <=, <"] <float> 
+			[{AR}] <["=, >=, >, <=, <"]> <float>: print random map from library with a AR ["=, >=, >, <=, <"] <float> 
+			[{OD}] <["=, >=, >, <=, <"]> <float>: print random map from library with a OD ["=, >=, >, <=, <"] <float> 
+			[{HP}] <["=, >=, >, <=, <"]> <float>: print random map from library with a HP ["=, >=, >, <=, <"] <float> 
+
+			
+add shop:
+	--> Stream Items
+		--> 
+	--> Status Tokens
+		--> 
+	--> GatchaPon Tickets
+		--> 
+	--> Special Occupations
+		-->
+	
+add GatchaPons:
+	--> Milestone
+		-->special item pools
+	--> Coins  #item pool is a mix of real item rewards and stream rewards and garbage/negatives
+		-->Unlucky Ticket #pool consists of 85% garbage 15% stream rewards 0% real rewards
+		-->Value Ticket #pool consists of 60% garbage 35% stream rewards 5% real rewards
+		-->Standard Ticket #pool consists of 45% garbage 45% stream rewards 10% real rewards
+		-->Lucky Ticket #pool consists of 25% garbage 50% stream rewards 25% real rewards
+		-->Godly Ticket #pool consists of 0% garbage 50% stream rewards 50% real rewards
+
+
+[TODO] add vote.game()
+[TODO] add vote.poll()
+[TODO] add vote.song()
+
+[TODO] add shop.buy()
+[TODO] add shop.sell()
+[TODO] add shop.Items()
+[TODO] add shop.Tokens()
+[TODO] add shop.Tickets()
+[TODO] add shop.Jobs()
+[TODO] add shop.appraise()
+
+[TODO] add gatcha.Unlucky()
+[TODO] add gatcha.Value()
+[TODO] add gatcha.Standard()
+[TODO] add gatcha.Lucky()
+[TODO] add gatcha.Godly()
+
+[TODO] add Nabi.ExpMacros: allow users to make expression animations for nabi
+
+[TODO] rework UserList.csv to make it more optimized and humanly readable
+
+[TODO] add "Level Leader-boards" page
+[TODO] add "Quests&Events" page
+[TODO] add "Occupations" page
+[TODO] add "Expressions" page
+[TODO] add "Standings" page
+[TODO] add "Home" page
+[TODO] fill out "Games" page
+[TODO] fill out "About" page
+[TODO] fill out "Nabi (^w^)/" page
+[TODO] fill out "Donations" page
+[TODO] update "Downloads" page
+
+[TODO ART] Draw custom nabi banners for Main NabiGUI  #wait until most pages are finalized on NabiGUI
+
+
+
+
+
+
+
+_____________DONE______________
+
+[addition] create Command(object) and CommandList(object) to store data regarding commands and interface with csv file
+[addition] create User(object) #stores all values associated with specified user 
+[addition] create Wallet(object) #controls individual income and expenses as well as current balance #User(object) holds a single instance of this
+[addition] create Standings(object) as abstract for multiple Standings to store permisions and special positions
+[addition] create functions.py to hold classes that represent the categories and contain functions that are the core of the commands
+[optimization] optimize modular checking and execution of commands
+[addition] added dummy.dummy: prints out a line of text when called; takes no arguments
+[addition] added level.level: three varitions: []: display User's level | ["leaderboards"]: print out the top 5 Users | [str]: display level of [str] user
+[addition] added Nabi.awake: displays the exact time in seconds that NabiBot has been running
+[addition] partially added fun.roll: rolls a die; two variations: []: rolls a 6 sided die | [int>1]: rolls an <int> sided die
+[completion] linked roll with money system to incorporate the uniform lottery distribution
+[bugfix] fixed some bugs that poped up from porting code from offline to online interfacing
+[bugfix] fixed an updating bug where the while loop halts when nothing is being sent in twitch
+[addition] added debug.exit: NabiBot says by and goes to sleep(i.e. it closes the program)
+[addition] added fun.challenge: check Documentation*
+[addition] added coin.coins: check
+[bugfix] fixed levelup bug where some messages aren't sent when multiple simultanious level-ups occur at the same time
+[note] noted NabiBot_ cannot read commands sent by itself
+[bugfix] fixed areas where previous note fails to activate a command.
+[bugfix] fixed a bug where exp is still given to inactive users
+[bugfix] fixed a bug where comments aren't removed from the users CILM queue until they post a new comment
+[twitch] renamed MareBot to NabiBot_
+[bugfix] fixed ping bug where NabiBot_ would timeout despite pong being sent (added .encode() to the string sent)
+[addition] added blocked Users list
+[addition] added Nabi.rating:
+[bugfix] fixed (Maybe?) bug with detecting how many comments a user has posted in the last minute
+[addition] added command.list(): coming soon statement
+[completion] finished adding fun.roll: rolls are a competition against nabi now
+[addition] created Expressions Application: changes Nabi's expression in a graphical window
+[addition] added Nabi.Expressions: writes the expression to file for expressions.py to read to change expression on GUI
+[addition] implemented a standin cooldown system
+[completion] fully implemented the cooldown system into the User class after discovering some bugs with my partial standin system
+[bugfix] fixed a bug where float types and int types were both evaluated the same way in the syntax throwing errors due to conversion of the string directly into an int where the string is in float format
+[optimization] reorganized functions into more individual functions within the class rather than having commands with multiple otpions be resolved under one functionality
+[note] previous optimization fixes problems when cooldown treats all suboptions as one function under the main function
+[addition] added Osu class
+[integration] integrated "osu!StreamCompanion" by Piotrekol for handleing NP detection and writing to files
+[addition] added Osu.NP: displays currently playing or listening to song
+[addition] added Osu.DL: sends a link to download the currently playing map, if map is not currently being played, informs so
+[addition] added dummy.add: adds a dummy command
+[bugfix] fixed an issue with encoding output messages in ascii when non-ascii characters are passed into the dummy.add command
+[addition] added dummy.remove: removes a dummy command, informs of failure upon attempts to remove non-dummy commands or non-existent commands
+[bugfix] fixed possible exploit by converting / to ! where a person could add a dummy command that triggers moderator functions
+[addition] added math class
+[addition] added math.add: Adds two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.subtract: Subtracts two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.multiply: Multiplies two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.divide: Divides two numbers as floats and converts back to int if the result has no values after the decimal place; if ZeroDivisionError, optputs "Undefined" as result
+[addition] added math.random: Nabi picks a random number between 1-100; can take two ints as an argument, they set the upper and lower bounds for Nabi's selection
+[addition] added math.modulo: computes remainder of division of two ints; if ZeroDivisionError, optputs "Undefined" as result
+[addition] implemented command.list: sorts the list of commands names reducing them to one instance, then Nabi tells them in chat
+[addition] added NabiOverlay.py
+[addition] implemented data population on NabiOverlay.py for NP, F, and D data; additional implement: autoresizing text when it is poulated
+[addition] added command.reload: reloads list of commands
+[addition] added command.save: saves command list to file
+[file] combined functionality of Expressions.pyw and NabiOverlay.pyw into NabiGUI.pyw
+[optimization] optimized sloppy NabiOverlay.pyw code when implementing into NabiGUI.pyw
+[optimization] optimized image rendering on NabiGUI.pyw: now loads all images at the beginning instead of every time step and also ".convert_alpha()"s all of the images
+[note] Finally decided to change files and rescheme version names (5/2/2016)
+[file] Changed nabi-use-only files from ".txt" naming to ".nabi" file naming type --> still read as txt though
+[addition] added file GUIdata.nabi to store the file directories to non-nabi integrated files used (i.e. labels and NP)
+[addition] added a startup check and prompt for directories if no valid directories in GUIdata.nabi
+[bugfix] handeled an error that could cause NabiGUI.py to continually crash if the files are no longer in the directory she has in GUIdata.nabi
+[twitch] made a spot on overlay for NabiGUI.pyw
+[file] categorized __Done__ section with []
+	--> [addition]: new features, 
+	--> [optimization]: more efficiency, 
+	--> [completion]: finishing features, 
+	--> [bugfix]: fixing problems, 
+	--> [note]: info, 
+	--> [twitch]: twitch related, 
+	--> [integration]: external program integration, 
+	--> [file]: file system changes
+	--> -->: means content belongs to previous []
+[addition]: linked NabiBot files to Google drive and have a auto updating list on website
+[completion]: command.web implemented with a link to website's commands page
+[addition] implemented standings for all users as well as restrictions within the standings
+[addition] added NabiV2 expression images to GUI and tweaked to fit (also swapped Chroma color to a grey)
+[bugfix] fixed roll command to be more fair with its "randomness"
+[note] occupation list added
+[addition] fun.randomLoli(): gives a link to a random loli in my collection of 104 lolis :3
+[addition] created Jobs.py and Quests.py, completed abstract class and made skeleton for all occupation classes
+[addition] added and implemented Occupations.self()
+[addition] added and implemented Occupations.other()
+[addition] added and implemented Occupations.sLevel()
+[addition] added and implemented Occupations.oLevel()
+[addition] added and implemented Occupations.list()
+[addition] added and implemented Occupations.sChange()
+[addition] added and implemented Occupations.oChange()
+<<<6/1/2016 - 6/2/2016>>>
+[completion] implemented Occupations.AcceptQuest()
+[completion] implemented Occupations.QuestOption()
+[completion] implemented Occupations.DropQuest()
+[completion] implemented Occupations.ConfirmDropQuest()
+[completion] implemented Occupations.Event()
+[completion] implemented Occupations.AcceptQuest()
+[completion] implemented Occupations.QuestOption()
+[completion] implemented Occupations.DropQuest()
+[completion] implemented Occupations.Event()
+[addition] Events.csv, Quests.csv, and Jobs.csv added and fully operational
+[addition] added and implemented Occupations.listChoices()
+[addition] added Quest(object) and QuestList(object)
+[addition] added Event(object) and EventList(object)
+[addition][Jobs] added FarmerC1-3 and FarmerE1-3
+[note] will probably start putting datestamps before each set of changes
+[note] end of version 1.40
+
+>>>>>>>>>>>>>>>>>>>
+>>>NabiBot_v1.45>>>
+>>>>>>>>>>>>>>>>>>>
+<<<6/3/2016>>>
+[note] reformatted documentation section to be more up to date and readable
+<<<6/8/2016>>>
+[addition] added mouth0 and "eh" eyes to nabi.expressions #there are now 70 available expressions for nabi (^o^)/
+<<<6/13/2016 - 6/14/2016>>>
+[removed] Osu.DL()
+[addition] implemented Osu.DL() into Osu.NP()
+[optimization] entirety of Quest.py
+[optimization] remformatted Quests.csv, [["Name:", "Requirements:", "EffectsA:", "EffectsB:", "EffectsC:", "Quest:", "ChoiceA:", "ChoiceB:", "ChoiceC:", "ResultA:", "ResultB:", "ResultC:"]]
+[optimization] reformatted Events.csv, [["Name:", "Coins:", "Exp:", "Event"]]
+[addition][Jobs] All remaining First Tier Events 1-3 added (Scavenger 1-4)
+[addition] added a whisper response to inform someone that they are in cooldown -_-
+[optimization] made most normal commands whisper response to keep nabi chat spamming to a minimum
+[addition] obtained a list of 8679 kaomoji from Ayu and saved at Expressions/KaomojiALL.nabi
+[bugfix] fixed parsing bug with socket's parseSend() function
+[bugfix] fixed formatting bugs with QuestList.getFromFile() after fixing the Quests.csv formatting
+[addition] Nabi has reaction code in 13 places of which are activated inside of these commands:
+	--> fun.roll()
+	--> coins.pay()
+	--> coins.incomeO()
+	--> coins.expensesO()
+	--> coins.other()
+	--> Nabi.rating()
+[note] slated NabiChangeExpressGUI as a project in TODO
+[note] Story, Quest, and Event reward coding table added to documentation
+[note] added Special Occupations to shop TODO
+[note] added ticket tiers for GatchaPon TODO and defined item pool chances
+<<<6/14/2016>>>
+[optimization] reworked roll command to make more compact and efficient
+[addition] added fun.bet() in place of secondary function of fun.roll()
+[optimization] reformatted Commands.csv to make it humanly readable, [["Command:", "Modifiers:", "Cooldown:", "CodeCommand:", "Description:"]]
+[bugfix] updated the Commands.csv connected to website (was still grabbing from v1.40)
+[addition] Nabi reaction code in # places of which are activated inside of these commands:
+	--> level.other()
+[note] slated Nabi.ExpMacros() in TODO
+<<<6/15/2016 - 6/16/2016>>>
+[addition] added .xlsx compilation of CommandList.csv into OneDrive on command saving
+[addition] added convertCSV() to CommandClass.py
+[addition][web] integrated CommandList.xlsx into webpage using Excel Online Embeded iframe
+[optimization] reformated Commands.csv to make it MORE humanly readable, [["Command:", "Modifiers:", "Cooldown:", "Description:", "CodeCommand:"]]
+	optimizations include:
+	--> cooldown displays "# sec."
+	--> discription moved to allow for exclusion of "CodeCommand:" on embed webpage
+[optimization][web] stylized CommandList.xlsx conversion and customized Embed size to fit up to 80 commands http://puu.sh/puEJp/6673d15720.png
+[addition][web] added key for CommandsList.xlsx, a very long fun key...
+[addition][web] added TL;DR Key for CommandsList.xlsx...
+[optimization] changed "str" to "User" where neccesary in CommandsList.csv, and handled in code for better Discernment by humans
+[addition] added usage descriptions for all current commands (excluding dummy commands)
+[note] while adding descriptions, I realized I should probably make pages for certain nabi mechanics and fill in/update others, added to TODO
+[note] organized TODO section with [TODO] tags
+[note] removed "Current Command List" section and updated "Documentation for Commands" section
+<<<6/21/2016 - 6/22/2016>>>
+[failure] found out Pygame is unable to render Japanese characters rendering Foobar integration a failure
+[note] learned Tkinter and started development on actual NabiGUI
+[addition] added log.nabi (replaced all command line logging for GUI)
+[addition] added RunStatusStart.py (crash reports for Run.py)
+[addition] added Run.cmd (starts RunStatusStart.py in a way excecutable from python code)
+[addition] added Close.nabi (informs Run.py that it has been requested to exit)
+[addition] added Status.nabi (written to by RunStatusStart to inform the current status of Run.py)
+[note] renamed NabiGUI.py to Overlay.py
+[note] renamed GUI.py to NabiGUI.py
+[addition] added GUIPreview.jpg for a preview on the fake window pointer for NabiGUI.py
+[note] progress on NabiGUI.py http://puu.sh/pBHFx/df57bc0e95.jpg  http://puu.sh/pBHGn/04e880dcff.jpg  http://puu.sh/pBHH1/600d6dfa59.jpg  http://puu.sh/pBHHD/de0764a85a.jpg
+[optimization] reorganized files to store data files in folders and .py in main
+<<<6/24/2016>>>
+[bugfix] fixed directory errors and text alignment with Overlay.py
+[note] added "Remake Overlay.py Using Tkinter" and [TODO ART] "NabiGUI banner" to TODO
+<<<6/25/2016>>>
+[note] END OF V1.45
+
+>>>>>>>>>>>>>>>>>>>
+>>>NabiBot_v1.50>>>
+>>>>>>>>>>>>>>>>>>>
+<<<6/25/2016 - 6/26/2016>>>
+[optimization] Remade Overlay.py in Tkinter
+[addition] implemented Foobar np integration into Overlay.py
+[addition] added crash logging to Run.py
+[addition] added crash logging to Overlay.py
+[addition] added Overlay.py Start & Stop buttons into NabiGUI http://puu.sh/pGnra/5414d41ea5.jpg
+[addition] added Nabi.NPChange()
+[bugfix] fixed bug where if someone made a command with " in it, It would break the code.
+<<<6/27/2016 - 6/28/2016>>>
+[optimization] tweaked NabiGUI Nabi S/C & Overlay S/C buttons to appear next to one another and the S/C appear in place of each other when the program is S/C http://puu.sh/pIiUa/e4a257d96a.jpg
+[bugfix] fixed a bug where crashlog would display sys.exit() program tracebacks
+[addition] added icon to NabiGUI
+[addition] added a debugConsole.cmd to quickly get to this directory for debugging
+[addition] added icons to both shortcuts http://puu.sh/pIiab/8c294b2b4b.jpg
+[bugfix] fixed a bug where the window would load at the wrong size #I just forgot to define the size in geometry ^_^; http://puu.sh/pIiZM/a53b354d4a.png
+[optimization] removed RunStatusStart.py and implemented it's processes into Run.py
+[addition] Nabi says to chat when she crashes "/me crashes >o<"
+[bugfix] fixed a bug where making any command with \ would have a chance to break the code and not display correctly # everything except \n displays correctly ## cause it is not sent through the socket
+[addition] added Overlay.ico to Overlay.py
+[optimization] made S/C buttons place once on their own command and also upon MainMenu being switched to <-- yes correctly
+[addition] added Verbose checkbutton that toggles between Verbose Log and Simple Log <-- again swaps correctly http://puu.sh/pIypA/8fbc30a789.png http://puu.sh/pIyrQ/6d3ec3b4af.png
+[note] took note that Nabi's Birthday is April 9, 2016
+[addition] added debug.crash(): forces Nabi to crash with a ForceCrash() traceback error
+[optimization] changed Run.py and Overlay.py from .py to .pyw to allow for cleaner excecution of them from NabiGUI
+[addition] added dummy.addOption()
+[addition] added dummy.removeOption()
+[bugfix] fixed bug where traceback and crash text would display when debug.exit() is closed
+[note] Student Occupation tree is now Student->Teacher->Researcher->Time_Traveler
+[note] Updated Occupation info in Changelog and Jobs.py
+[note] unslated "change self/other.Occupations" from TODO
+[optimization] optimized Run.py minute check system to guarantee the check using subtraction from time.clock()
+[addition] added "Overlay:" to status bar and added OverlayStatus.nabi for logging program status of Overlay.pyw
+<<<6/28/2016>>>
+[bugfix] fixed long running bug with cooldowns randomly freezing #explanation cause too long... http://puu.sh/pJNIc/f301aa5294.png
+<<<7/1/2016>>>
+[addition] added ExpChange launchboard to NabiGUI where clicking on an expression of Nabi will change her expression to said expression in Overlay.py 
+	#I'm shocked that I got this done as fast as I did ^_^; http://puu.sh/pMz40/c514821064.png 
+	## don't worry, the buttons are just apearing on top. of the status bar cause they are halfway on the screen, it isn't like that when they are alligned properly
+[bugfix] fixed the problem with a random white outline appearing on all of the rendered Nabi expressions # caused by PIL resize tool, I resized the source images and now its fine
+<<<7/20/2016>>>
+[optimization] resized selection on commands list to fit more commands on webpage
+[addition] added chat logging upon exit for NabiGUI
+<<<8/12/2016>>>
+[optimization] cleaned up NabiGUI code a good bit
+<<<8/22/2016>>>
+[note] Archived all Nabibot versions
+[tweak] overrideredirected overlay window because preset window collection on Obs works if it was set before it is overrideredirected
+[addition] added GUIfunctions.PopulateCommands & GUIfunction.PopulateUsers which populate the users and commands listboxes in NabiGUI
+[note] todo added: rework UserList.csv for human readability
+[addition] updated !randomLoli list with 88 more lolis :3 now 192 total
+<<<9/22-29/2016>>>
+[addition] added YTMPlayer Directory
+[addition] added YTD.py: 
+	contains all code for handling automatic download of songs from youtube links as well as the code for converting to mp3 and playing in NabiGUI
+[addition] added music player options and progress bar for it in NabiGUI
+[note] END OF V1.50
+
+>>>>>>>>>>>>>>>>>>>
+>>>NabiBot_v1.55>>>
+>>>>>>>>>>>>>>>>>>>
+<<<9/30/2016>>>
+[optimization] Refactor YTD.py (Not quite finished)
+[addition] added video downloading capabilities to YTD
+[started] eliminate MusicList.txt by gathering song names from the directory
+[TODO] add a song search function for current Directory <YTD><NabiGUI>
+[TODO] add video playing and displaying capabilities <YTD><NabiGUI>
+[TODO] allow seeking within current song <YTD><NabiGUI>
+[TODO] Refactor NabiGUI.py <NabiGUI>
+[TODO] add a "Music" page <NabiGUI>
+[TODO] add Tree Listing of music directories <NabiGUI>
+[TODO] Highlight current song in tree listing <NabiGUI>
+[TODO] allow directory/song selection by clicking on the tree entry <NabiGUI>
+
+
+
+
+
+
+
+
+
+
+___________Documentation for Commands_____________
+
+
+category -debug- #
+	exit:
+	
+	
+category -dummy- #because there aren't enough of these in the world already...
+	dummy:
+	add:
+	remove:
+	
+	
+category -math- #for all of you people who lack what you like to call "a brain"
+	add:
+	subtract:
+	multiply:
+	divide:
+	random:
+	modulo:
+	root:
+
+
+category -command- #
+	web:
+	#list: #commented out#
+	reload:
+	save:
+
+	
+category -fun-  #fun and games, and maybe a little betting ;)
+	roll:
+	bet:
+	Cfight:
+	Caccept:
+	Cdecline:
+	Challenge:
+	randomLoli:
+
+
+category -coin-  #money money and more money
+	self:
+	pay:
+	add:
+	remove:
+	set:
+	incomeS:
+	incomeO:
+	expensesS:
+	expensesO:
+	other:
+
+
+catgory -level-  #Now with anti-Pots_ measures :D
+	self: 
+	leaderboards: #to be updated#
+	other: 
+	
+	
+category -Occupations- #
+	self:
+	sLevel:
+	oLevel:
+	list:
+	sChange:
+	oChange:
+	other:
+
+	
+category -Quest- #
+	Accept:
+	Option:
+	listChoices:
+	Drop:
+	
+	
+category -Event- #
+	Event:
+	
+	
+category -Nabi-  #なびーちゃん　かわいいよ～　＞ｗ＜
+	rating: prints out the user.NabiRating with a message #credit boruma
+				1/10) I don't want to be mean but... >_< you're the worst! you made me say it... you're so mean to me! BibleThump
+				2/10) You're so mean to me. Please leave so Nabi can be happy. -o-
+				3/10) I'm not one to be negative, but you're not a nice person. -3-
+				4/10) Eto... I hope you aren't mad at me. It's just my opinion of you ^-^;
+				5/10) You're not a bad person, but you're not a good person either. I guess that makes you an okay person. (^o^)
+				6/10) You're average. (^w^) Please continue to be nice to me.
+				7/10) You are a nice person to have around. After all, you're  helping Onii-chan become the best streamer.
+				8/10) I think fondly of you, but if you were a bit nicer, I'd rate you a 9/10. ;3
+				9/10) Maybe you could be the one for me.  ;3 Just kidding. ;P Shuruni is the one for me. <3
+				10/10) You're one of my favorite people ^w^, but you'll never be as good as Onii-chan. ;)
+				11/10) Onii-chan will always be my favorite (^3^)
+	awake: prints the uptime of NabiBot in seconds
+	ExpressionList: prints list of possible expressions	
+	ExpressionChange: changes Nabi's expression to said expression
+
+	
+category -Osu-  #category for all Osu! related commands
+	NP:
+	
+	
+category -Standings- #
+	change:
+	self:
+	other:
+	
+
+category -anime- #MAL integration
+	#TODO
+
+
+
+
+
+
+___________Extra Information Documentation_____________
+
+
+Quests:
+	Scavenger: ["ScavengerE1", "ScavengerE2", "ScavengerE3", "ScavengerE4"]
+	Lumberjack:
+	Fisherman:
+	Hunter:
+	
+	Farmer: ["FarmerC1", "FarmerC2", "FarmerC3", "FarmerE1", "FarmerE2", "FarmerE3"]
+	Soldier:
+	Captain:
+	General:
+	
+	Writer: ["WriterE1", "WriterE2", "WriterE3"]
+	Librarian:
+	Accountant:
+	Advisor:
+	
+	Student: ["StudentE1", "StudentE2", "StudentE3"]
+	Scholar:
+	Disciple:
+	Teacher:
+	
+	Bartender: ["BartenderE1", "BartenderE2", "BartenderE3"]
+	Server:
+	Culinary_Attendant:
+	Chef:
+	
+	Street_performer: ["Street_PerformerE1", "Street_PerformerE2", "Street_PerformerE3"]
+	Actor:
+	Dancer:
+	Idol:
+	
+	Apprentice: ["ApprenticeE1", "ApprenticeE2", "ApprenticeE3"]
+	Miko:
+	Priest:
+	Oracle:
+	
+	Thief: ["ThiefE1", "ThiefE2", "ThiefE3"]
+	Gangster:
+	Assassin:
+	Executioner:
+	
+	Outsider: ["OutsiderE1", "OutsiderE2", "OutsiderE3"]
+	Alchemist: 
+	Mage: 
+	Summoner: 
+	
+	Lesser_Demon: ["Lesser_DemonE1", "Lesser_DemonE2", "Lesser_DemonE3"]
+	Greater_Demon:
+	Elite_Demon:
+	Demon_Lord:
+	
+	Adventurer: ["AdventurerE1", "AdventurerE2", "AdventurerE3"]
+	Mercenary:
+	Freelancer:
+	Hero:
+	
+	Mechanic: ["MechanicE1", "MechanicE2", "MechanicE3"]
+	Mason:
+	Blacksmith:
+	Craftsman:
+	
+	Linguist: ["LinguistE1", "LinguistE2", "LinguistE3"]
+	Translator:
+	Judge:
+	Supreme_Justice:
+	
+	Peddler: ["PeddlerE1", "PeddlerE2", "PeddlerE3"]
+	Trader:
+	Innkeeper:
+	Banker:
+	
+	King:
+	
+	Queen:
+	
+Ocupations:
+
+listOfOccupations = ["Scavenger", "Lumberjack", "Fisherman", "Hunter", "Farmer", "Soldier", "Captain", "General", "Writer", "Librarian", "Accountant", "Advisor", "Student", "Teacher", "Researcher", "Time_Traveler", "Bartender", "Server", "Culinary_Attendant", "Chef", "Street_Performer", "Actor", "Dancer", "Idol", "Apprentice", "Miko", "Priest", "Oracle", "King", "Queen", "Thief", "Gangster", "Assassin", "Executioner", "Outsider", "Alchemist", "Mage", "Summoner", "Lesser_Demon", "Greater_Demon", "Elite_Demon", "Demon_Lord", "Adventurer", "Mercenary", "Freelancer", "Hero", "Mechanic", "Mason", "Blacksmith", "Craftsman", "Linguist", "Translator", "Judge", "Supreme_Justice", "Peddler", "Trader", "Innkeeper", "Banker"]
+	
+each occupation has their own set of the following:
+	Story Quests: 3-5 per occupation and stage in ocupation trees,
+		consist of many choices and must be passed before advancing 
+		to the next teir of job. repeatable until you pass them, then 
+		they are no longer repeatable
+	Common Quests: 3-5 per occupation and stage in occupation 
+		trees, quests that are taken when you have not yet reached 
+		the occupation level requirement for the next story quest. 
+		can vary in length and outcomes greatly. are picked randomly 
+		and thus repeatable in that sense.
+	Events: 5-10 per occupation and stage in occupation trees, run on 
+		aseparate command with a much shorter cooldown. have no 
+		options and vary in effects. picked randomly thus may repeat
+
+	
+		Name:				Income:				Expenses:			TierUpDifficulty:
+Path 1	Scavenger			Very Small			Very Small			Very Low
+		Lumberjack			Large				Medium				Very Low
+		Fisherman			Very Small			Medium				Very Low
+		Hunter				Small				Small				N/A
+				
+Path 2	Farmer				Small				Small				Very Low
+		Soldier				Small				Small				Low
+		Captain				Small				Small				Low
+		General				Small				Small				N/A
+				
+Path 3	Writer				Very Small			Very Small			Low
+		Librarian			Small				Medium				Normal
+		Accountant			Medium				Small				Normal
+		Advisor				Large				Medium				N/A
+				
+Path 4	Student				Small				Small				Low
+		Teacher 			Small				Small				Normal
+		Researcher			Medium				Medium				Normal
+		Time_Traveler 		Small				Small				N/A
+				
+Path 5	Bartender			Small				Small				Low
+		Server				Small				Medium				Normal
+		Culinary_Attendant	Small				Small				Normal
+		Chef				Medium				Very Small			N/A
+				
+Path 6	Street_Performer	Very Small			Very Small			High
+		Actor				Large				Small				Normal
+		Dancer				Very Small			Small				High
+		Idol				Large				Medium				N/A
+				
+Path 7	Apprentice			Very Small			Very Small			Low
+		Miko				Medium				Small				High
+		Priest				Medium				Medium				Normal
+		Oracle				Large				Very Large			N/A
+				
+Path 8	Thief				Small				Very Small			Low
+		Gangster			Medium				Medium				Normal
+		Assassin			Very Large			Large				Low
+		Executioner			Small				Small				N/A
+				
+Path 9	Outsider			Very Small			Small				Normal
+		Alchemist			Very Small			Small				High
+		Mage				Large				Medium				High
+		Summoner			Very Large			Large				N/A
+				
+Path 10	Lesser_Demon		Small				Very Small			High
+		Greater Demon		Very Large			Small				Normal
+		Elite_Demon			Small				Medium				Normal
+		Demon Lord			Medium				Medium				N/A
+				
+Path 11	Adventurer			Medium				Medium				Normal
+		Mercenary			Medium				Very Small			Normal
+		Freelancer			Medium				Medium				Normal
+		Hero/Heroine		Very Large			Medium				N/A
+				
+Path 12	Mechanic			Medium				Medium				Normal
+		Mason				Medium				Medium				Normal
+		Blacksmith			Large				Very Small			Normal
+		Craftsman			Medium 				Medium				N/A
+				
+Path 13	Linguist			Medium				Medium				Normal
+		Translator			Small				Medium				High
+		Judge				Very Large			Medium				Normal
+		Supreme_Justice		Very Small			Small				N/A
+				
+Path 14	Peddler				Small				Large				High
+		Trader				Medium				Small				Normal
+		Innkeeper			Medium				Small				High
+		Banker				Large 				Small				N/A
+
+	
+	class up level requirements:
+		very fast  =  LV. 8   
+		fast       =  LV. 11  
+		normal     =  LV. 14  
+		slow       =  LV. 17  
+		very slow  =  LV. 20  
+	
+	range of incomes/expenses:
+	note:   r(a, b)  means the income/expenses will be anywhere from a coins to (excluding) b coins
+		unemployed   =   income: 5           =   expenses: r(4, 6)
+		very small   =   income: r(5, 11)    =   expenses: r(1, 6)
+		small        =   income: r(7, 16)    =   expenses: r(3, 11)
+		medium       =   income: r(11, 21)   =   expenses: r(7, 16)
+		large        =   income: r(15, 26)   =   expenses: r(11, 21)
+		very large   =   income: r(20, 31)   =   expenses: r(15, 26)	
+	
+	Event/Quest Cash rewards":
+		so the table using actual numbers should be like this maybe:
+					Story	Quest	Event
+			   L:	300		200		100
+			  SL:	400		300		200
+			   N:	500		400		300
+			  SH:	600		500		400
+			   H:	700		600		500
+	
+		so the EXP gain table using actual numbers should be like this maybe:
+					Story	Quest	Event
+			   L:	60		40		20
+			  SL:	80		60		40
+			   N:	100		80		60
+			  SH:	120		100		80
+			   H:	140		120		100
+#
