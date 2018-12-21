@@ -1,0 +1,231 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+NabiBot_v1.20  changelog                                  Shuruni Hikaru
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+_____________Key_____________
+#: denotes a comment for extra info #like here #and here... #oh and here
+add: obviously it means to skip over it and do better things with your life -3- #refers to command additions
+	main: options on a command that are neccesary to include for the command to make sense... or not make sense ^_^;
+	opt: options on a command that are optional and because of that will probably never get done >.<
+	{}: used to denote an option that is written exactly as it is shown and has sub-options
+	<>: used to denote an option that requires actually using your brain to type a specific query
+	[]: used to denote an option that is optional. would you like some options with that? #also requires the use of that thing you call a brain :O
+	(): if you dont want to be confused, ignore it, it denotes code stuff and hidden options #in depth --> used to denote a hidden option that I need to remember to code for use somewhere else in the options list ^_^;
+create: basically refers to things to do in coding... or, ya know.. things to procrastinate...
+optimize: refers to things to do that will either make my life easier in the future, or make the program run better
+category: a header for grouping several commands that are related but would be strange as indiviual options
+cooldown: how often the command can be used
+noMod: basically what the command should do if you don't use a modifier
+#c#co#com#comm#comme#commen#comment#comments#comments #comments -#comments -3#comments -3-#k I'm done ;)
+
+____________TODO____________
+s.send("CAP REQ :twitch.tv/membership \r\n")
+
+challenge win statements:
+	#
+
+	
+category -commands-
+	main:
+		cooldown: 5 min
+		noMod: links webpage with list for commands or prints off a lsit of commands (yet to decide)
+
+
+category -random-  #random randomness randomizing random randoms
+	main:
+		!randomloli: #randomly chooses a loli pic from my collection and sends the puush link :3
+			cooldown: 1 minute per user
+		!random <numberA> <numberB>: #returns a random number between <numberA> and <numberB>
+			cooldown: 30 sec
+			
+			
+category -math-  #for all of you people who lack what you like to call "a brain"
+	main:
+		!calc: #copy some calculator code to work in chat -3-
+			cooldown: 5 sec
+
+		
+category -anime-
+	main:
+		!anime: #MAL integration
+			main: 
+				<anime>: prints the data on the stated anime as provided by MAL
+			opt: 
+				{reccomend} <genre>: returns a random anime of <genre> with an average rating of at least 6 stars
+
+category -!Osu-  #category for all Osu! related commands
+	main:
+		!np: displays the NP data and link for the currently playing song
+		!stats: displays My Osu! statistics :3
+			[player]: displays the Osu! statistics of [player]
+		!req: request maps for me to play in Osu!
+	opt:
+		!randomMap: prints the NP data and link to a random map in my library
+			[{stars}] <["=, >=, >, <=, <"]> <float>: print random map from library that is ["=, >=, >, <=, <"] <float> stars
+			[{CS}] <["=, >=, >, <=, <"]> <float>: print random map from library with a CS ["=, >=, >, <=, <"] <float> 
+			[{AR}] <["=, >=, >, <=, <"]> <float>: print random map from library with a AR ["=, >=, >, <=, <"] <float> 
+			[{OD}] <["=, >=, >, <=, <"]> <float>: print random map from library with a OD ["=, >=, >, <=, <"] <float> 
+			[{HP}] <["=, >=, >, <=, <"]> <float>: print random map from library with a HP ["=, >=, >, <=, <"] <float> 
+
+create system for cooldowns
+implement standings and permisions
+
+_____________DONE______________
+
+create Command(object) and CommandList(object) to store data regarding commands and interface with csv file
+create User(object) #stores all values associated with specified user 
+create Wallet(object) #controls individual income and expenses as well as current balance #User(object) holds a single instance of this
+create Standings(object) as abstract for multiple Standings to store permisions and special positions
+create functions.py to hold classes that represent the categories and contain functions that are the core of the commands
+optimize modular checking and execution of commands
+added dummy.dummy: prints out a line of text when called; takes no arguments
+added level.level: three varitions: []: display User's level | ["leaderboards"]: print out the top 5 Users | [str]: display level of [str] user
+added Nabi.awake: displays the exact time in seconds that NabiBot has been running
+partially added fun.roll: rolls a die; two variations: []: rolls a 6 sided die | [int>1]: rolls an <int> sided die
+	TODO: #DONE
+		link with money system to incorporate the uniform lottery distribution
+
+fixed some bugs that poped up from porting code from offline to online interfacing
+fixed an updating bug where the while loop halts when nothing is being sent in twitch
+added debug.exit: NabiBot says by and goes to sleep(i.e. it closes the program)
+added fun.challenge: check Documentation*
+added coin.coins: check
+fixed levelup bug where some messages aren't sent when multiple simultanious level-ups occur at the same time
+noted NabiBot_ cannot read commands sent by itself
+fixed areas where previous note fails to activate a command.
+fixed a bug where exp is still given to inactive users
+fixed a bug where comments aren't removed from the users CILM queue until they post a new comment
+renamed MareBot to NabiBot_
+fixed ping bug where NabiBot_ would timeout despite pong being sent (added .encode() to the string sent)
+added blocked Users list
+added Nabi.rating:
+fixed (Maybe?) bug with detecting how many comments a user has posted in the last minute
+added command.list(): coming soon statement
+finished adding fun.roll: rolls are a competition against nabi now
+
+
+
+
+___________Documentation for Finished Additions_____________
+
+catgory -Levels-  #Now with anti-Pots_ measures :D
+	main:
+		!level: #level and ranking system functionality with diminishing returns for comments within the same minute)
+			cooldown: 5 min per user
+			noMod: prints the curent level, exp, and rank
+			opt:
+				{leaderboards}: prints a list of the current top 5 Users
+				
+				
+category -fun-  #fun and games, and maybe a little betting ;) 
+	main:
+		!roll: #rolls a die #roll against nabi to win/lose u to (10*sides-1) coins
+			cooldown: 5 min per user
+			noMod: rolls a 6 sided die.
+			opt: 
+				[sides]: lets you determine how many sides are on the die you are rolling
+		!challenge: #fights for coins between users
+			cooldown: 5 min per user
+			main:
+				<User> <amount>: User.challenged == [commandUser.name, amount] #prints(commandUser + " challenges " + User + " to a duel with " + str(amount) + " coins at stake! " + User + ", Please type \"!challenge accept\" to accept the challenge, or \"!challenge decline\" to refuse it.") #Note: if the User hs not been created yet (i.e. has not messaged in chat before), do nothing; also, remove the challenge after 10 minutes if no reponse has been made.
+				(fight)(<UserA>)(<UserB>): sample output: "3" pause 1 sec "2" pause 1 sec "1" pause 2 sec "Fight!" pause for 5 seconds [list of interesting win stements. ex. "UserA wipes the floor with UserB!" or "even though it looked like UserB was winning, User A pulled a surprise attack in the end and won the fight!"] pause 3 seconds "Congratulations UserA/B, you won [amount] coins!"  "!coins take UserA/B [amount]"  "!coins add UserA/B [amount]"
+				{accept}: #accepts a challenge
+					(
+					if commandUser.challenged == []:
+						print("silly " + commandUser + ", No-one has challenged you to anything! :P")
+					else:
+						print("Alright, Here we go!")
+						UserA = commandUser.challenged[0]
+						UserB = commandUser.name
+						commandUser.challenged == []
+						print("!challenge fight " + UserA + " " + UserB)
+					)
+				{decline}: #accepts a challenge
+					(
+					if commandUser.challenged == []:
+						print("silly " + commandUser + ", No-one has challenged you to anything! :P")
+					else:
+						print("oh well " + commandUser.challenged[0] + ", looks like " + User.name + " didn't feel like losing to you today! :P")
+						commandUser.challenged == []
+					)
+
+					
+category -Coins-  #money money and more money
+	main:
+		!coins: #coin gain system based on activity with diminishing returns for comments within the same minute)
+			cooldown: 1 min per user
+			noMod: prints the balance of the User
+			main:
+				[{give/pay}] <User> <amount>: transfer amount from User's balance to specified User's balance. #does nothing if same User
+				[{add}] <User> <amount>: add amount to User's balance #NabiBot and Shuruni only
+				[{remove/take}] <User> <amount>: subtract amount from User's balance #NabiBot and Shuruni only
+				[{set}] <User> <amount>: set User's balance to amount #NabiBot and Shuruni only
+			opt:
+				[{income}]: displays the User's income
+				[{expenses}]: displays the User's expenses
+
+
+category -Nabi-
+	rating: prints out the user.NabiRating with a message #credit boruma
+		1/10) I don't want to be mean but... >_< you're the worst! you made me say it... you're so mean to me! BibleThump
+		2/10) You're so mean to me. Please leave so Nabi can be happy. -o-
+		3/10) I'm not one to be negative, but you're not a nice person. -3-
+		4/10) Eto... I hope you aren't mad at me. It's just my opinion of you ^-^;
+		5/10) You're not a bad person, but you're not a good person either. I guess that makes you an okay person. (^o^)
+		6/10) You're average. (^w^) Please continue to be nice to me.
+		7/10) You are a nice person to have around. After all, you're  helping Onii-chan become the best streamer.
+		8/10) I think fondly of you, but if you were a bit nicer, I'd rate you a 9/10. ;3
+		9/10) Maybe you could be the one for me.  ;3 Just kidding. ;P Shuruni is the one for me. <3
+		10/10) You're one of my favorite people ^w^, but you'll never be as good as Onii-chan. ;)
+		if user.getName() == "shuruni":
+			11/10) Onii-chan will always be my favorite (^3^)
+	awake: prints the uptime of NabiBot in seconds
+
+	
+
+category -random-  #random randomness randomizing random randoms
+	main:
+
+
+category -math-  #for all of you people who lack what you like to call "a brain"
+	main:
+
+
+category -anime- #MAL integration
+	main:
+
+
+category -Osu-  #category for all Osu! related commands
+	main:
+	
+	opt:
+
+
+
+
+______________Dummy Command List_____________:
+	!MAL: returns the link to my MAL anime list... i.e. the horribly out of date thing...
+	!debug: "this is only a test"
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

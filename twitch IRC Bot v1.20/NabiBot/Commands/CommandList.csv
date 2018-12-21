@@ -1,0 +1,23 @@
+!debug,"dummy.dummy(""this is only a test"", ",
+!roll,fun.roll(,int
+!roll,fun.roll(,
+!level,level.level(,
+!level,level.level(,leaderboards
+!level,level.level(,str
+!NabiUptime,Nabi.awake(,
+!debugExit,debug.exit(,
+!challenge,fun.challenge(,"str, int"
+!challenge,fun.challenge(,accept
+!challenge,fun.challenge(,decline
+!challenge,fun.challenge(,"fight, str, str"
+!coins,coin.coins(,
+!coins,coin.coins(,"give, str, int"
+!coins,coin.coins(,"add, str, int"
+!coins,coin.coins(,"take, str, int"
+!coins,coin.coins(,"set, str, int"
+!coins,coin.coins(,income
+!coins,coin.coins(,expenses
+!coins,coin.coins(,str
+!commands,command.list(,
+!rate,Nabi.rating(,
+!rate,Nabi.rating(,str
