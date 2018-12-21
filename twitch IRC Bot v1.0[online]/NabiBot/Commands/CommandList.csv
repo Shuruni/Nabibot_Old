@@ -1,0 +1,8 @@
+!debug,"dummy.dummy(""this is only a test"", ",
+!roll,fun.roll(,int
+!roll,fun.roll(,
+!level,level.level(,
+!level,level.level(,leaderboards
+!level,level.level(,str
+!NabiUptime,Nabi.awake(,
+!debugExit,debug.exit(,
