@@ -1,0 +1,47 @@
+!roll,fun.roll(,int
+!roll,fun.roll(,
+!level,level.self(,
+!level,level.leaderboards(,leaderboards
+!level,level.other(,str
+!NabiUptime,Nabi.awake(,
+!debugExit,debug.exit(,
+!challenge,fun.Challenge(,"str, int"
+!challenge,fun.Caccept(,accept
+!challenge,fun.Cdecline(,decline
+!challenge,fun.Cfight(,"fight, str, str"
+!coins,coin.self(,
+!coins,coin.pay(,"pay, str, int"
+!coins,coin.pay(,"give, str, int"
+!coins,coin.add(,"add, str, int"
+!coins,coin.remove(,"remove, str, int"
+!coins,coin.remove(,"take, str, int"
+!coins,coin.set(,"set, str, int"
+!coins,coin.incomeS(,income
+!coins,coin.incomeO(,"income, str"
+!coins,coin.expensesS(,expenses
+!coins,coin.expensesO(,"expenses, str"
+!coins,coin.other(,str
+!commands,command.list(,
+!commands,command.web(,web
+!rate,Nabi.rating(,
+!rate,Nabi.rating(,str
+!lolis,"dummy.dummy(""Nabi is a loli ^w^"", ",
+!expressions,Nabi.ExpressionList(,
+!expressions,Nabi.ExpressionChange(,str
+!add,dummy.add(,"str, addCom"
+!remove,dummy.remove(,str
+!np,Osu.NP(,
+!np,Osu.DL(,link
+!math,math.add(,"add, float, float"
+!math,math.subtract(,"subtract, float, float"
+!math,math.multiply(,"multiply, float, float"
+!math,math.divide(,"divide, float, float"
+!math,math.random(,"random, int, int"
+!math,math.random(,random
+!math,math.modulo(,"modulo, int, int"
+!fish,"dummy.dummy(""fish is fish"", ",
+!switch,"dummy.dummy(""death is switching apps now"", ",
+!commands,command.reload(,reload
+!commands,command.save(,save
+ばか,"dummy.dummy(""ばかじゃないよ！（＞。＜）"", ",
+ロリコン,"dummy.dummy(""このロリコンどもめ！"", ",

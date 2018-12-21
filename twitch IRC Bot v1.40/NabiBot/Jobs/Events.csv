@@ -1,0 +1,4 @@
+Name:,Effects:,Event:
+FarmerE1,"[[""coins"", 200]]",It's harvest season. You go to sell your crop at the marketplace for a nice penny.
+FarmerE2,"[[""coins"", -100]]","A sudden blizzard hit your town last night, and now your crops are terribly ruined. Taking your wool coat off its hanger, you head toward town square to get more seeds."
+FarmerE3,"[[""coins"", -50], [""exp"", -10]]",You notice that your carrots' tops aren't growing as high as they should be at this time of year. You check the roots. The carrots are just stubs. It seems vegetable beetles ate your carrots. You remember the warning about using pesticides in order to prevent these things from happening ringing in your head.

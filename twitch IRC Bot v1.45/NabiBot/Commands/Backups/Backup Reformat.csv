@@ -1,0 +1,70 @@
+Command:,Modifiers:,Cooldown:,CodeCommand:,Description:
+(^w^)/*Nabi,,,debug.exit(,dummy
+!math,"add, float, float",,math.add(,dummy
+!math,"subtract, float, float",,math.subtract(,dummy
+!math,"multiply, float, float",,math.multiply(,dummy
+!math,"divide, float, float",,math.divide(,dummy
+!math,"random, int, int",,math.random(,dummy
+!math,random,,math.random(,dummy
+!math,"modulo, int, int",,math.modulo(,dummy
+!math,"root, float",,math.root(,dummy
+!commands,,,command.list(,dummy
+!commands,web,,command.web(,dummy
+!commands,reload,,command.reload(,dummy
+!commands,save,,command.save(,dummy
+!roll,,,fun.roll(,dummy
+!bet,int,,fun.bet(,dummy
+!challenge,"str, int",,fun.Challenge(,dummy
+!challenge,accept,,fun.Caccept(,dummy
+!challenge,decline,,fun.Cdecline(,dummy
+!randomLoli,,,fun.randomLoli(,dummy
+!coins,,,coin.self(,dummy
+!coins,"pay, str, int",,coin.pay(,dummy
+!coins,"give, str, int",,coin.pay(,dummy
+!coins,"add, str, int",,coin.add(,dummy
+!coins,"remove, str, int",,coin.remove(,dummy
+!coins,"take, str, int",,coin.remove(,dummy
+!coins,"set, str, int",,coin.set(,dummy
+!coins,income,,coin.incomeS(,dummy
+!coins,"income, str",,coin.incomeO(,dummy
+!coins,expenses,,coin.expensesS(,dummy
+!coins,"expenses, str",,coin.expensesO(,dummy
+!coins,str,,coin.other(,dummy
+!level,,,level.self(,dummy
+!level,leaderboards,,level.leaderboards(,dummy
+!level,str,,level.other(,dummy
+!occupation,,,Occupations.self(,dummy
+!occupation,list,,Occupations.list(,dummy
+!occupation,"list, special",,Occupations.list(,dummy
+!occupation,level,,Occupations.sLevel(,dummy
+!occupation,"level, str",,Occupations.oLevel(,dummy
+!occupation,"change, str",,Occupations.sChange(,dummy
+!occupation,"change, str, str",,Occupations.oChange(,dummy
+!occupation,str,,Occupations.other(,dummy
+!quest,accept,,Quest.Accept(,dummy
+!quest,"choose, int",,Quest.Option(,dummy
+!quest,drop,,Quest.Drop(,dummy
+!quest,choices,,Quest.listChoices(,dummy
+!event,,,Event.Event(,dummy
+!NabiUptime,,,Nabi.awake(,dummy
+!rate,,,Nabi.rating(,dummy
+!rate,str,,Nabi.rating(,dummy
+!expressions,,,Nabi.ExpressionList(,dummy
+!expressions,str,,Nabi.ExpressionChange(,dummy
+!np,,,Osu.NP(,dummy
+!standing,"change, str, str",,Standings.change(,dummy
+!standing,,,Standings.self(,dummy
+!standing,str,,Standings.other(,dummy
+!add,"str, addCom",,dummy.add(,dummy
+!remove,str,,dummy.remove(,dummy
+!shurunicode,,,"dummy.dummy(""Lolis, Innocence, Anime"", ",dummy
+!lolis,,,"dummy.dummy(""Nabi is a loli ^w^"", ",dummy
+ばか,,,"dummy.dummy(""ばかじゃないよ！（＞。＜）"", ",dummy
+ロリコン,,,"dummy.dummy(""このロリコンどもめ！"", ",dummy
+!fishy,,,"dummy.dummy(""jtrieu089 unhealthy obsession with fish so he can use this command"", ",dummy
+!punch,,,"dummy.dummy(""*punches whoever won in a challenge*"", ",dummy
+!blush,,,"dummy.dummy(""Nabi hides behind shuruni in embarrassment, her cheeks flushed brightly"", ",dummy
+!skinHex,,,"dummy.dummy(""http://puu.sh/pjd7C/b08d6ff920.osk"", ",dummy
+!Borukolle,,,"dummy.dummy(""Boruma's unhealthy obsession with repairing ships in KanColle"", ",dummy
+Revival,,,"dummy.dummy(""Hiki probably killed me"", ",dummy
+!steal,"coins, str, int",,"dummy.dummy(""Deathbatkill has just stolen your coins check your coins now!"", ",dummy

@@ -1,0 +1,42 @@
+3 Quests loaded from file
+43 Events loaded from file
+78 Commands loaded from file
+204 Users loaded from file
+3 Blocked Users loaded from file
+CILM: >W< [10:22:40PM]  NabiBot_: Successfully joined chat!
+204 Users saved
+CILM: 1 [10:22:52PM] shuruni: testing simple versus verbose logging
+CILM: 2 [10:22:59PM] shuruni: may work may not, Idk
+CILM: 3 [10:23:05PM] shuruni: !test
+CILM: 4 [10:23:10PM] shuruni: !debug
+CILM: 5 [10:23:15PM] shuruni: !lolis
+dummy.dummy("Nabi is a loli ^w^", 
+restriction present: False
+CILM: >W< [10:23:15PM]  NabiBot_: Nabi is a loli ^w^
+shuruni cooldown 10 before
+CILM: 6 [10:23:22PM] shuruni: !randomLoli
+fun.randomLoli(
+restriction present: False
+CILM: >W< [10:23:22PM]  NabiBot_: http://imgur.com/QcAKGfQ
+
+shuruni cooldown 10 before
+CILM: 7 [10:23:32PM] shuruni: !coins
+coin.self(
+restriction present: False
+CILM: >W< [10:23:32PM]  NabiBot_: /w shuruni You Have 67726 coins ^w^
+shuruni cooldown 10 before
+CILM: 8 [10:23:37PM] shuruni: Kappa
+Updating Users...
+shuruni: CILM:8  EXP:+3  coins: 15 - 8 = 7
+204 Users saved
+CILM: 9 [10:23:44PM] shuruni: !commands
+command.web(
+restriction present: False
+CILM: >W< [10:23:44PM]  NabiBot_: https://sites.google.com/site/shurunihikaru/nabi-w/commands
+shuruni cooldown 10 before
+CILM: 10 [10:23:54PM] shuruni: (^w^)/
+CILM: 11 [10:24:00PM] shuruni: (^w^)/*Nabi
+debug.exit(
+restriction present: False
+CILM: >W< [10:24:00PM]  NabiBot_: It was nice chatting with you all (^w^). Take care Everyone \(^o^)/
+sysExit on 9

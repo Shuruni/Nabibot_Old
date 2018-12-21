@@ -1,0 +1,68 @@
+Command:,Modifiers:,Cooldown:,Description:,CodeCommand:
+(^w^)/*Nabi,,10 sec.,Tells Nabi that it is time to say goodbye to everyone and go to sleep,debug.exit(
+!math,add  float  float,10 sec.,Adds two numbers,math.add(
+!math,subtract  float  float,10 sec.,Subtracts the second number from the first,math.subtract(
+!math,multiply  float  float,10 sec.,Multiplies two numbers together,math.multiply(
+!math,divide  float  float,10 sec.,Divides the first number by the second,math.divide(
+!math,random  int  int,10 sec.,Nabi picks a random number between first and second numbers,math.random(
+!math,random,10 sec.,Nabi picks a random number from 0 to 100,math.random(
+!math,modulo  int  int,10 sec.,Returns the remainder of the first number divided by second,math.modulo(
+!math,root  float,10 sec.,Takes the square root of a number,math.root(
+!commands,,10 sec.,Links to the page you are on right now (^w^)/,command.web(
+!commands,reload,10 sec.,Reloads the commands from file(Debug),command.reload(
+!commands,save,10 sec.,Saves the commands to all files(Debug),command.save(
+!roll,,10 sec.,Rolls a 6-sided die competing against Nabi for up to 50 coins,fun.roll(
+!bet,int,10 sec.,Bet “int” coins against Nabi in competition,fun.bet(
+!challenge,User  int,10 sec.,Sends a challenge to User to compete for int coins,fun.Challenge(
+!challenge,accept,10 sec.,Accepts a challenge sent to you from another user,fun.Caccept(
+!challenge,decline,10 sec.,Declines a challenge sent to you from another user,fun.Cdecline(
+!randomLoli,,10 sec.,Links a random Loli pic to you from my collection :3,fun.randomLoli(
+!coins,,10 sec.,Tells you how many coins you currently have,coin.self(
+!coins,pay  User  int,10 sec.,You pay User int number of coins,coin.pay(
+!coins,give  User  int,10 sec.,You give User int number of coins,coin.pay(
+!coins,add  User  int,10 sec.,Adds int number of coins to User's wallet(Debug),coin.add(
+!coins,remove  User  int,10 sec.,Removes int number of coins from User's wallet(Debug),coin.remove(
+!coins,take  User  int,10 sec.,Takes int number of coins from User's wallet(Debug),coin.remove(
+!coins,set  User  int,10 sec.,Sets User's coins to int number of coins(Debug),coin.set(
+!coins,income,10 sec.,Tells you your current income,coin.incomeS(
+!coins,income  User,10 sec.,Tells you the income of User,coin.incomeO(
+!coins,expenses,10 sec.,Tells you your current expenses,coin.expensesS(
+!coins,expenses  User,10 sec.,Tells you the expenses of User,coin.expensesO(
+!coins,User,10 sec.,Tells you how many coins User has,coin.other(
+!level,,10 sec.,Tells you your current level,level.self(
+!level,leaderboards,10 sec.,(UpdateTODO)Links to Level Leader-boards page,level.leaderboards(
+!level,User,10 sec.,Tells you the level of User,level.other(
+!occupation,,10 sec.,Tells you your current occupation (TODO)with statistics,Occupations.self(
+!occupation,list,10 sec.,lists the Entry Level Occupations you can change to,Occupations.list(
+!occupation,list  special,10 sec.,Lists the Special Occupations,Occupations.list(
+!occupation,level,10 sec.,Tells you the current level of your Occupation,Occupations.sLevel(
+!occupation,level  User,10 sec.,Tells you the current level of User's Occupation,Occupations.oLevel(
+!occupation,change  str,10 sec.,Changes your occupation to an Entry Level Occupation,Occupations.sChange(
+!occupation,change  User  str,10 sec.,Changes User's occupation(Debug),Occupations.oChange(
+!occupation,User,10 sec.,Tells you User's occupation (TODO)with statistics,Occupations.other(
+!quest,accept,3600 sec.,Accepts a quest(see Quests&Events page),Quest.Accept(
+!quest,choose  int,10 sec.,"Chooses an option in a quest(1, 2, or 3)",Quest.Option(
+!quest,drop,10 sec.,Drops your current quest,Quest.Drop(
+!quest,choices,10 sec.,displays the choices you have during a quest,Quest.listChoices(
+!event,,1800 sec.,Activates an Event(see Quests&Events page),Event.Event(
+!NabiUptime,,10 sec.,How long Nabi has been Awake(running) in seconds ;3,Nabi.awake(
+!rate,,10 sec.,What Nabi thinks of you today,Nabi.rating(
+!rate,User,10 sec.,What Nabi thinks of User today,Nabi.rating(
+!expressions,,10 sec.,Lists the expressions that Nabi can make(See Expressions Page),Nabi.ExpressionList(
+!expressions,str,10 sec.,Changes Nabi's current expression to str expression,Nabi.ExpressionChange(
+!np,,10 sec.,"Gives the name of and, if in map, the link of the currently playing song",Osu.NP(
+!standing,change  User  str,10 sec.,Changes the standing of User to str standing(Debug),Standings.change(
+!standing,,10 sec.,Tells you your current Standing(see Standings page),Standings.self(
+!standing,User,10 sec.,Tells you the current Standing of User,Standings.other(
+!add,str  addCom,10 sec.,Adds the command “str” which prints out addCom message,dummy.add(
+!remove,str,10 sec.,removes the dummy command “str”,dummy.remove(
+!lolis,,10 sec.,by Shuruni,"dummy.dummy(""Nabi is a loli ^w^"", "
+ばか,,10 sec.,by Shuruni,"dummy.dummy(""ばかじゃないよ！（＞。＜）"", "
+ロリコン,,10 sec.,by Shuruni,"dummy.dummy(""このロリコンどもめ！"", "
+!fishy,,10 sec.,by jtrieu089,"dummy.dummy(""jtrieu089 unhealthy obsession with fish so he can use this command"", "
+!punch,,10 sec.,fighting is wrong...,"dummy.dummy(""*punches whoever won in a challenge*"", "
+!blush,,10 sec.,"it's okay Nabi, I'm here for you ^w^","dummy.dummy(""Nabi hides behind shuruni in embarrassment, her cheeks flushed brightly"", "
+!skinHex,,10 sec.,My Osu Skin,"dummy.dummy(""http://puu.sh/pjd7C/b08d6ff920.osk"", "
+Revival,,10 sec.,Hiki killed Nabi ;-;,"dummy.dummy(""Hiki probably killed me"", "
+!steal,coins  User  int,10 sec.,Dummy trolling command by Deathbatkill,"dummy.dummy(""Deathbatkill has just stolen your coins check your coins now!"", "
+!shurunicode,,10 sec.,My Code of Life ~Shuruni,"dummy.dummy(""Lolis, Innocence, Anime"", "

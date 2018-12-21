@@ -1,0 +1,69 @@
+Command:,Modifiers:,Cooldown:,Description:,CodeCommand:
+(^w^)/*Nabi,,10 sec.,Tells Nabi that it is time to say goodbye to everyone and go to sleep,debug.exit(
+!math,add  float  float,10 sec.,dummy,math.add(
+!math,subtract  float  float,10 sec.,dummy,math.subtract(
+!math,multiply  float  float,10 sec.,dummy,math.multiply(
+!math,divide  float  float,10 sec.,dummy,math.divide(
+!math,random  int  int,10 sec.,dummy,math.random(
+!math,random,10 sec.,dummy,math.random(
+!math,modulo  int  int,10 sec.,dummy,math.modulo(
+!math,root  float,10 sec.,dummy,math.root(
+!commands,,10 sec.,dummy,command.list(
+!commands,web,10 sec.,dummy,command.web(
+!commands,reload,10 sec.,dummy,command.reload(
+!commands,save,10 sec.,dummy,command.save(
+!roll,,10 sec.,dummy,fun.roll(
+!bet,int,10 sec.,dummy,fun.bet(
+!challenge,str  int,10 sec.,dummy,fun.Challenge(
+!challenge,accept,10 sec.,dummy,fun.Caccept(
+!challenge,decline,10 sec.,dummy,fun.Cdecline(
+!randomLoli,,10 sec.,dummy,fun.randomLoli(
+!coins,,10 sec.,dummy,coin.self(
+!coins,pay  str  int,10 sec.,dummy,coin.pay(
+!coins,give  str  int,10 sec.,dummy,coin.pay(
+!coins,add  str  int,10 sec.,dummy,coin.add(
+!coins,remove  str  int,10 sec.,dummy,coin.remove(
+!coins,take  str  int,10 sec.,dummy,coin.remove(
+!coins,set  str  int,10 sec.,dummy,coin.set(
+!coins,income,10 sec.,dummy,coin.incomeS(
+!coins,income  str,10 sec.,dummy,coin.incomeO(
+!coins,expenses,10 sec.,dummy,coin.expensesS(
+!coins,expenses  str,10 sec.,dummy,coin.expensesO(
+!coins,str,10 sec.,dummy,coin.other(
+!level,,10 sec.,dummy,level.self(
+!level,leaderboards,10 sec.,dummy,level.leaderboards(
+!level,str,10 sec.,dummy,level.other(
+!occupation,,10 sec.,dummy,Occupations.self(
+!occupation,list,10 sec.,dummy,Occupations.list(
+!occupation,list  special,10 sec.,dummy,Occupations.list(
+!occupation,level,10 sec.,dummy,Occupations.sLevel(
+!occupation,level  str,10 sec.,dummy,Occupations.oLevel(
+!occupation,change  str,10 sec.,dummy,Occupations.sChange(
+!occupation,change  str  str,10 sec.,dummy,Occupations.oChange(
+!occupation,str,10 sec.,dummy,Occupations.other(
+!quest,accept,3600 sec.,dummy,Quest.Accept(
+!quest,choose  int,10 sec.,dummy,Quest.Option(
+!quest,drop,10 sec.,dummy,Quest.Drop(
+!quest,choices,10 sec.,dummy,Quest.listChoices(
+!event,,1800 sec.,dummy,Event.Event(
+!NabiUptime,,10 sec.,dummy,Nabi.awake(
+!rate,,10 sec.,dummy,Nabi.rating(
+!rate,str,10 sec.,dummy,Nabi.rating(
+!expressions,,10 sec.,dummy,Nabi.ExpressionList(
+!expressions,str,10 sec.,dummy,Nabi.ExpressionChange(
+!np,,10 sec.,dummy,Osu.NP(
+!standing,change  str  str,10 sec.,dummy,Standings.change(
+!standing,,10 sec.,dummy,Standings.self(
+!standing,str,10 sec.,dummy,Standings.other(
+!add,str  addCom,10 sec.,dummy,dummy.add(
+!remove,str,10 sec.,dummy,dummy.remove(
+!lolis,,10 sec.,dummy,"dummy.dummy(""Nabi is a loli ^w^"", "
+ばか,,10 sec.,dummy,"dummy.dummy(""ばかじゃないよ！（＞。＜）"", "
+ロリコン,,10 sec.,dummy,"dummy.dummy(""このロリコンどもめ！"", "
+!fishy,,10 sec.,dummy,"dummy.dummy(""jtrieu089 unhealthy obsession with fish so he can use this command"", "
+!punch,,10 sec.,dummy,"dummy.dummy(""*punches whoever won in a challenge*"", "
+!blush,,10 sec.,dummy,"dummy.dummy(""Nabi hides behind shuruni in embarrassment, her cheeks flushed brightly"", "
+!skinHex,,10 sec.,dummy,"dummy.dummy(""http://puu.sh/pjd7C/b08d6ff920.osk"", "
+Revival,,10 sec.,dummy,"dummy.dummy(""Hiki probably killed me"", "
+!steal,coins  str  int,10 sec.,dummy,"dummy.dummy(""Deathbatkill has just stolen your coins check your coins now!"", "
+!shurunicode,,10 sec.,dummy,"dummy.dummy(""Lolis, Innocence, Anime"", "

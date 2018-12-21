@@ -1,0 +1,44 @@
+Name:,Coins:,Exp:,Event:
+ScavengerE1,L,L,You’re quite low on cash this month. You go into the forest to find small plants and artifacts to sell on the market before sunset. You end up finding some herbs.
+ScavengerE2,-L,L,"It’s past nightfall, and as you smell an irresistible scent of food coming from a large mansion, your stomach can’t help but growl from a week of not eating. Your body moves without your will and you end up at the trashcans. You start eating straight from the trashcans, and someone sees you. You’re captured and thrown into prison for trespassing on the king’s property."
+ScavengerE3,-L,L,"You decide to go look for better employment to finally end your hunger spree, however, nobody wants to hire you and you end up hungry at the end of the day like always."
+ScavengerE4,L,SL,"You’re walking on the riverbed when something catches your eye. You jump into the river and swim towards it. A very luxurious necklace glistens in your hand. With joy, you decide to give the necklace to your girlfriend for her birthday."
+FarmerE1,N,SL,It's harvest season. You go to sell your crop at the marketplace for a nice penny.
+FarmerE2,-SL,SL,"A sudden blizzard hit your town last night, and now your crops are terribly ruined. Taking your wool coat off its hanger, you head toward town square to get more seeds."
+FarmerE3,-SL,SL,You notice that your carrots' tops aren't growing as high as they should be at this time of year. You check the roots. The carrots are just stubs. It seems vegetable beetles ate your carrots. You remember the warning about using pesticides in order to prevent these things from happening ringing in your head.
+WriterE1,-L,L,"You find yourself completely stuck with writer’s block. In order to help you with ideas, you go out with some friends to the local pub."
+WriterE2,-L,L,"You travel to another city in order to learn more about different cultures and languages. Even though it’s not very profitable, you learn a great amount about the different places you visit."
+WriterE3,N,N,"You sent your latest publication to a local editor. After a month, you receive a shared profit from the sales."
+StudentE1,L,L,You are asked by your teacher to gather some teaching materials for the lesson today.
+StudentE2,SL,L,"After school is over, you decide to do a quick job. You make some quick cash."
+StudentE3,SL,L,"On your way to school, you find a rare coin on the ground."
+BartenderE1,SL,SL,Two men are fighting in the pub. You break up the fight and toss them out. Some people were grateful to you for ousting the nuisance. They give you a tip.
+BartenderE2,SL,L,You see a lone woman sitting at the bar and decide to talk to her. You get a lot of gossip and women’s advice.
+BartenderE3,L,L,A shipment came in and you organize it all during resting hours.
+Street_PerformerE1,SH,N,"The local festival is coming up, so you reserve a spot for your performance, which costs a little bit of money. It was well worth it though because by participating in the festival, you were able to profit with much more money gained than you would have otherwise."
+Street_PerformerE2,-SL,L,"Some kids thought it was funny to throw rocks at you, and concerned for your life, you quickly hide where they cannot hit you. You have to wait for an hour before they leave."
+Street_PerformerE3,-L,L,"Practicing a new act took some time. You were able to better entertain and achieve same profits, but you lost a little from your hiatus."
+ApprenticeE1,L,L,You help out at the bakery and earn some cash.
+ApprenticeE2,L,L,You help out a blacksmith by recommending quality armor and weapons in order to get more customers.
+ApprenticeE3,L,L,"You help out a merchant by carrying around many boxes of merchandise. You end up exhausted at the end of the day, but the pay is good."
+ThiefE1,N,N,"You are requested to steal an item for someone, and you succeed."
+ThiefE2,-N,N,"You are requested to steal an item for someone, but you fail."
+ThiefE3,L,L,"For a little pocket change, during busy hours, you sneak into a large crowd and pickpocket someone."
+OutsiderE1,L,L,You help out with the heavy lifting for the women in the village.
+OutsiderE2,L,L,You offer to help prepare the evening meal.
+OutsiderE3,SL,L,You stand in for one of the local merchants when they’re at home sick.
+Lesser_DemonE1,-L,L,"Since your superior wasn’t happy with your work, you ended up getting scolded and forced to do overtime. You didn’t get any pay today."
+Lesser_DemonE2,SL,L,Invaders have infiltrated hell. You and some other demons scare and even kill some of the enemies.
+Lesser_DemonE3,L,L,You went out into the human world today. You followed your superior and enjoyed the nice scenery. Though they were rather quick to punish when you were out of line.
+AdventurerE1,SH,N,You come across some gold while exploring some ruins.
+AdventurerE2,-SH,SH,"While you were sleeping at an inn, someone entered your room and stole your money that you had on you. You check the lock and realize that you had left the door unlocked."
+AdventurerE3,N,N,"Following your list of quests, you get a bunch done that day and receive compensation for each quest you completed in town."
+MechanicE1,SL,SL,"You were asked to fix an appliance for one of your regular customers. You fixed it for them, and you earned a nice small pay for your service."
+MechanicE2,-SH,SH,"After you fixed a sink, you are about to leave when a cat decides to jump onto the faucet and completely breaks it. Reluctantly, you go back and fix it back up, using extra materials that would cost you more than your pay for the sink."
+MechanicE3,-L,L,"You did some plumbing work today and after the day was over, you find yourself rather wet and gross, so you decide to take a shower."
+LinguistE1,-L,L,You purchase the newest dictionary that you find in a book store in order to improve in your work.
+LinguistE2,SL,SL,An archeologist asks you to go on their expedition in order to translate runes found on some ancient pedestal.
+LinguistE3,SL,L,"You don’t often get requests, so you often have a secondary occupation to earn some of the money to pay for your expenses of living. You go to the shop you work at and make some money."
+PeddlerE1,-SL,N,"A thief stole some of your goods, and you lost some profit."
+PeddlerE2,-SH,N,You didn’t make much profit this month due to a new sales tax.
+PeddlerE3,SH,SH,"At a rather expensive restaurant, you talk to some rather important individuals in the city. After the meal, you look at your rather empty looking wallet with a look of dissatisfaction. Luckily, due to that meeting, word spread about your shop and your profits increased tremendously."

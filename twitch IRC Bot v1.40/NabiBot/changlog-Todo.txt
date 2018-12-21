@@ -1,0 +1,495 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+NabiBot_v1.40  changelog                                  Shuruni Hikaru
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+_____________Key_____________
+#: denotes a comment for extra info #like here #and here... #oh and here
+add: obviously it means to skip over it and do better things with your life -3- #refers to command additions
+	main: options on a command that are neccesary to include for the command to make sense... or not make sense ^_^;
+	opt: options on a command that are optional and because of that will probably never get done >.<
+	{}: used to denote an option that is written exactly as it is shown and has sub-options
+	<>: used to denote an option that requires actually using your brain to type a specific query
+	[]: used to denote an option that is optional. would you like some options with that? #also requires the use of that thing you call a brain :O
+	(): if you dont want to be confused, ignore it, it denotes code stuff and hidden options #in depth --> used to denote a hidden option that I need to remember to code for use somewhere else in the options list ^_^;
+create: basically refers to things to do in coding... or, ya know.. things to procrastinate...
+optimize: refers to things to do that will either make my life easier in the future, or make the program run better
+category: a header for grouping several commands that are related but would be strange as indiviual options
+cooldown: how often the command can be used
+noMod: basically what the command should do if you don't use a modifier
+#c#co#com#comm#comme#commen#comment#comments#comments #comments -#comments -3#comments -3-#k I'm done ;)
+
+____________TODO____________
+
+category -random-  #random randomness randomizing random randoms
+	main:
+		!randomloli: #randomly chooses a loli pic from my collection and sends the puush link :3
+			cooldown: 1 minute per user
+		
+category -song- #song related
+	main:
+		!request: #plays the youtube song link
+			cooldown: default
+		
+category -anime-
+	main:
+		!anime: #MAL integration
+			main: 
+				<anime>: prints the data on the stated anime as provided by MAL
+			opt: 
+				{reccomend} <genre>: returns a random anime of <genre> with an average rating of at least 6 stars
+
+				
+category -!Osu-  #category for all Osu! related commands
+	main:
+		!stats: displays My Osu! statistics :3
+			[player]: displays the Osu! statistics of [player]
+		!req: request maps for me to play in Osu!
+	opt:
+		!randomMap: prints the NP data and link to a random map in my library
+			[{stars}] <["=, >=, >, <=, <"]> <float>: print random map from library that is ["=, >=, >, <=, <"] <float> stars
+			[{CS}] <["=, >=, >, <=, <"]> <float>: print random map from library with a CS ["=, >=, >, <=, <"] <float> 
+			[{AR}] <["=, >=, >, <=, <"]> <float>: print random map from library with a AR ["=, >=, >, <=, <"] <float> 
+			[{OD}] <["=, >=, >, <=, <"]> <float>: print random map from library with a OD ["=, >=, >, <=, <"] <float> 
+			[{HP}] <["=, >=, >, <=, <"]> <float>: print random map from library with a HP ["=, >=, >, <=, <"] <float> 
+
+
+make nabi react to commnd usage with expressions
+add shop:
+	--> Stream Items
+		--> 
+	--> Status Tokens
+		--> 
+	--> GatchaPon Tickets
+		--> 
+	--> 
+	--> 
+	
+add gatchapon:
+	--> Milestone
+	--> Coins
+		-->shop items
+		-->real items
+
+
+add vote.game()
+add vote.poll()
+
+
+
+
+
+
+02: Happy?03: Feed me?04: Victorious?05: Disgust?06: Disapprove?07: Shy?08: Mischievous?09: Taunting?
+11: Nippah? (idk thought Rika)12: Embarassed?13: Overjoyed?14: Snooty? (Ohohohohoho)15: Afraid?16: No? (Don't want to!)17: Ganbare?18: Thank you?19: Playful?
+21: Shocked?22: Confused?23: Dizzy?24: Hypnotized?25: KO26: Error27: Maybe?28: You don't think I'm cute?29: I-It was a joke?
+31: Yay?32: Please?33: Excited?34: Cat's Meow?35: SOS?36: Lolicon alert?37: Giggling?38: About to burst?39: Childish?
+
+
+
+
+
+
+
+
+
+
+
+
+_____________DONE______________
+
+[addition] create Command(object) and CommandList(object) to store data regarding commands and interface with csv file
+[addition] create User(object) #stores all values associated with specified user 
+[addition] create Wallet(object) #controls individual income and expenses as well as current balance #User(object) holds a single instance of this
+[addition] create Standings(object) as abstract for multiple Standings to store permisions and special positions
+[addition] create functions.py to hold classes that represent the categories and contain functions that are the core of the commands
+[optimization] optimize modular checking and execution of commands
+[addition] added dummy.dummy: prints out a line of text when called; takes no arguments
+[addition] added level.level: three varitions: []: display User's level | ["leaderboards"]: print out the top 5 Users | [str]: display level of [str] user
+[addition] added Nabi.awake: displays the exact time in seconds that NabiBot has been running
+[addition] partially added fun.roll: rolls a die; two variations: []: rolls a 6 sided die | [int>1]: rolls an <int> sided die
+[completion] linked roll with money system to incorporate the uniform lottery distribution
+[bugfix] fixed some bugs that poped up from porting code from offline to online interfacing
+[bugfix] fixed an updating bug where the while loop halts when nothing is being sent in twitch
+[addition] added debug.exit: NabiBot says by and goes to sleep(i.e. it closes the program)
+[addition] added fun.challenge: check Documentation*
+[addition] added coin.coins: check
+[bugfix] fixed levelup bug where some messages aren't sent when multiple simultanious level-ups occur at the same time
+[note] noted NabiBot_ cannot read commands sent by itself
+[bugfix] fixed areas where previous note fails to activate a command.
+[bugfix] fixed a bug where exp is still given to inactive users
+[bugfix] fixed a bug where comments aren't removed from the users CILM queue until they post a new comment
+[twitch] renamed MareBot to NabiBot_
+[bugfix] fixed ping bug where NabiBot_ would timeout despite pong being sent (added .encode() to the string sent)
+[addition] added blocked Users list
+[addition] added Nabi.rating:
+[bugfix] fixed (Maybe?) bug with detecting how many comments a user has posted in the last minute
+[addition] added command.list(): coming soon statement
+[completion] finished adding fun.roll: rolls are a competition against nabi now
+[addition] created Expressions Application: changes Nabi's expression in a graphical window
+[addition] added Nabi.Expressions: writes the expression to file for expressions.py to read to change expression on GUI
+[addition] implemented a standin cooldown system
+[completion] fully implemented the cooldown system into the User class after discovering some bugs with my partial standin system
+[bugfix] fixed a bug where float types and int types were both evaluated the same way in the syntax throwing errors due to conversion of the string directly into an int where the string is in float format
+[optimization] reorganized functions into more individual functions within the class rather than having commands with multiple otpions be resolved under one functionality
+[note] previous optimization fixes problems when cooldown treats all suboptions as one function under the main function
+[addition] added Osu class
+[integration] integrated "osu!StreamCompanion" by Piotrekol for handleing NP detection and writing to files
+[addition] added Osu.NP: displays currently playing or listening to song
+[addition] added Osu.DL: sends a link to download the currently playing map, if map is not currently being played, informs so
+[addition] added dummy.add: adds a dummy command
+[bugfix] fixed an issue with encoding output messages in ascii when non-ascii characters are passed into the dummy.add command
+[addition] added dummy.remove: removes a dummy command, informs of failure upon attempts to remove non-dummy commands or non-existent commands
+[bugfix] fixed possible exploit by converting / to ! where a person could add a dummy command that triggers moderator functions
+[addition] added math class
+[addition] added math.add: Adds two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.subtract: Subtracts two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.multiply: Multiplies two numbers as floats and converts back to int if the result has no values after the decimal place
+[addition] added math.divide: Divides two numbers as floats and converts back to int if the result has no values after the decimal place; if ZeroDivisionError, optputs "Undefined" as result
+[addition] added math.random: Nabi picks a random number between 1-100; can take two ints as an argument, they set the upper and lower bounds for Nabi's selection
+[addition] added math.modulo: computes remainder of division of two ints; if ZeroDivisionError, optputs "Undefined" as result
+[addition] implemented command.list: sorts the list of commands names reducing them to one instance, then Nabi tells them in chat
+[addition] added NabiOverlay.py
+[addition] implemented data population on NabiOverlay.py for NP, F, and D data; additional implement: autoresizing text when it is poulated
+[addition] added command.reload: reloads list of commands
+[addition] added command.save: saves command list to file
+[file] combined functionality of Expressions.pyw and NabiOverlay.pyw into NabiGUI.pyw
+[optimization] optimized sloppy NabiOverlay.pyw code when implementing into NabiGUI.pyw
+[optimization] optimized image rendering on NabiGUI.pyw: now loads all images at the beginning instead of every time step and also ".convert_alpha()"s all of the images
+[note] Finally decided to change files and rescheme version names (5/2/2016)
+[file] Changed nabi-use-only files from ".txt" naming to ".nabi" file naming type --> still read as txt though
+[addition] added file GUIdata.nabi to store the file directories to non-nabi integrated files used (i.e. labels and NP)
+[addition] added a startup check and prompt for directories if no valid directories in GUIdata.nabi
+[bugfix] handeled an error that could cause NabiGUI.py to continually crash if the files are no longer in the directory she has in GUIdata.nabi
+[twitch] made a spot on overlay for NabiGUI.pyw
+[file] categorized __Done__ section with []
+--> [addition]: new features, 
+--> [optimization]: more efficiency, 
+--> [completion]: finishing features, 
+--> [bugfix]: fixing problems, 
+--> [note]: info, 
+--> [twitch]: twitch related, 
+--> [integration]: external program integration, 
+--> [file]: file system changes
+--> -->: means content belongs to previous []
+[addition]: linked NabiBot files to Google drive and have a auto updating list on website
+[completion]: command.web implemented with a link to website's commands page
+[addition] implemented standings for all users as well as restrictions within the standings
+[addition] added NabiV2 expression images to GUI and tweaked to fit (also swapped Chroma color to a grey)
+[bugfix] fixed roll command to be more fair with its "randomness"
+[note] occupation list added
+[addition] fun.randomLoli(): gives a link to a random loli in my collection of 104 lolis :3
+[addition] created Jobs.py and Quests.py, completed abstract class and made skeleton for all occupation classes
+[addition] added and implemented Occupations.self()
+[addition] added and implemented Occupations.other()
+[addition] added and implemented Occupations.sLevel()
+[addition] added and implemented Occupations.oLevel()
+[addition] added and implemented Occupations.list()
+[addition] added and implemented Occupations.sChange()
+[addition] added and implemented Occupations.oChange()
+<<<6/1/2016 - 6/2/2016>>>
+[completion] implemented Occupations.AcceptQuest()
+[completion] implemented Occupations.QuestOption()
+[completion] implemented Occupations.DropQuest()
+[completion] implemented Occupations.ConfirmDropQuest()
+[completion] implemented Occupations.Event()
+[completion] implemented Occupations.AcceptQuest()
+[completion] implemented Occupations.QuestOption()
+[completion] implemented Occupations.DropQuest()
+[completion] implemented Occupations.Event()
+[addition] Events.csv, Quests.csv, and Jobs.csv added and fully operational
+[addition] added and implemented Occupations.listChoices()
+[addition] added Quest(object) and QuestList(object)
+[addition] added Event(object) and EventList(object)
+[note] will probably start putting datestamps before each set of changes
+[note] end of version 1.40
+>>>>>>>>>>>>>>>>>>>
+>>>NabiBot_v1.45>>>
+>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+___________Documentation for Finished Additions_____________
+
+catgory -Levels-  #Now with anti-Pots_ measures :D
+	main:
+		!level: #level and ranking system functionality with diminishing returns for comments within the same minute)
+			cooldown: 5 min per user
+			noMod: prints the curent level, exp, and rank
+			opt:
+				{leaderboards}: prints a list of the current top 5 Users
+				
+				
+category -fun-  #fun and games, and maybe a little betting ;) 
+	main:
+		!roll: #rolls a die #roll against nabi to win/lose u to (10*sides-1) coins
+			cooldown: 5 min per user
+			noMod: rolls a 6 sided die.
+			opt: 
+				[sides]: lets you determine how many sides are on the die you are rolling
+		!challenge: #fights for coins between users
+			cooldown: 5 min per user
+			main:
+				<User> <amount>: User.challenged == [commandUser.name, amount] #prints(commandUser + " challenges " + User + " to a duel with " + str(amount) + " coins at stake! " + User + ", Please type \"!challenge accept\" to accept the challenge, or \"!challenge decline\" to refuse it.") #Note: if the User hs not been created yet (i.e. has not messaged in chat before), do nothing; also, remove the challenge after 10 minutes if no reponse has been made.
+				(fight)(<UserA>)(<UserB>): sample output: "3" pause 1 sec "2" pause 1 sec "1" pause 2 sec "Fight!" pause for 5 seconds [list of interesting win stements. ex. "UserA wipes the floor with UserB!" or "even though it looked like UserB was winning, User A pulled a surprise attack in the end and won the fight!"] pause 3 seconds "Congratulations UserA/B, you won [amount] coins!"  "!coins take UserA/B [amount]"  "!coins add UserA/B [amount]"
+				{accept}: #accepts a challenge
+					(
+					if commandUser.challenged == []:
+						print("silly " + commandUser + ", No-one has challenged you to anything! :P")
+					else:
+						print("Alright, Here we go!")
+						UserA = commandUser.challenged[0]
+						UserB = commandUser.name
+						commandUser.challenged == []
+						print("!challenge fight " + UserA + " " + UserB)
+					)
+				{decline}: #accepts a challenge
+					(
+					if commandUser.challenged == []:
+						print("silly " + commandUser + ", No-one has challenged you to anything! :P")
+					else:
+						print("oh well " + commandUser.challenged[0] + ", looks like " + User.name + " didn't feel like losing to you today! :P")
+						commandUser.challenged == []
+					)
+
+					
+category -Coins-  #money money and more money
+	main:
+		!coins: #coin gain system based on activity with diminishing returns for comments within the same minute)
+			cooldown: 1 min per user
+			noMod: prints the balance of the User
+			main:
+				[{give/pay}] <User> <amount>: transfer amount from User's balance to specified User's balance. #does nothing if same User
+				[{add}] <User> <amount>: add amount to User's balance #NabiBot and Shuruni only
+				[{remove/take}] <User> <amount>: subtract amount from User's balance #NabiBot and Shuruni only
+				[{set}] <User> <amount>: set User's balance to amount #NabiBot and Shuruni only
+			opt:
+				[{income}]: displays the User's income
+				[{expenses}]: displays the User's expenses
+
+
+category -Nabi-
+	rating: prints out the user.NabiRating with a message #credit boruma
+		1/10) I don't want to be mean but... >_< you're the worst! you made me say it... you're so mean to me! BibleThump
+		2/10) You're so mean to me. Please leave so Nabi can be happy. -o-
+		3/10) I'm not one to be negative, but you're not a nice person. -3-
+		4/10) Eto... I hope you aren't mad at me. It's just my opinion of you ^-^;
+		5/10) You're not a bad person, but you're not a good person either. I guess that makes you an okay person. (^o^)
+		6/10) You're average. (^w^) Please continue to be nice to me.
+		7/10) You are a nice person to have around. After all, you're  helping Onii-chan become the best streamer.
+		8/10) I think fondly of you, but if you were a bit nicer, I'd rate you a 9/10. ;3
+		9/10) Maybe you could be the one for me.  ;3 Just kidding. ;P Shuruni is the one for me. <3
+		10/10) You're one of my favorite people ^w^, but you'll never be as good as Onii-chan. ;)
+		if user.getName() == "shuruni":
+			11/10) Onii-chan will always be my favorite (^3^)
+	awake: prints the uptime of NabiBot in seconds
+	Expression: prints list of possible expressions	
+		[str]: changes Nabi's expression to said expression
+
+	
+
+category -random-  #random randomness randomizing random randoms
+	main:
+
+
+category -math-  #for all of you people who lack what you like to call "a brain"
+	main:
+
+
+category -anime- #MAL integration
+	main:
+
+
+category -Osu-  #category for all Osu! related commands
+	main:
+	
+	opt:
+	
+	
+add ocupations: tier based with range for expenses and income
+	1)Scavenger->Lumberjack->Fisherman->Hunter
+	2)Farmer->Soldier->Captain->General
+	3)Writer->Librarian->Accountant->Advisor
+	4)Student->Scholar->Disciple->Teacher
+	5)Bartender->Server->Culinary Attendant->Chef
+	6)Street_performer->Actor->Dancer-> Idol
+	7)Apprentice->Miko->Priest->Oracle
+	King/Queen 
+	8)Thief->Gangster->Assassin ->Executioner
+	9)Outsider->Horseman->Beast_Tamer-> Summoner 
+	10)Lesser_Demon->Greater_Demon-> Elite_Demon->Demon_Lord
+	11)Adventurer->Mercenary->Freelancer->Hero
+	12)Mechanic->Mason->Blacksmith->Craftsman
+	13)Linguist->Translator->Judge->Supreme_Justice
+	14)Peddler->Trader->Innkeeper->Banker
+	
+	listOfOccupations = ["Scavenger", "Lumberjack", "Fisherman", "Hunter", "Farmer", "Soldier", "Captain", "General", "Writer", "Librarian", "Accountant", "Advisor", "Student", "Scholar", "Disciple", "Teacher", "Bartender", "Server", "Culinary_Attendant", "Chef", "Street_Performer", "Actor", "Dancer", "Idol", "Apprentice", "Miko", "Priest", "Oracle", "King", "Queen", "Thief", "Gangster", "Assassin", "Executioner", "Outsider", "Horseman", "Beast_Tamer", "Summoner", "Lesser_Demon", "Greater_Demon", "Elite_Demon", "Demon_Lord", "Adventurer", "Mercenary", "Freelancer", "Hero", "Mechanic", "Mason", "Blacksmith", "Craftsman", "Linguist", "Translator", "Judge", "Supreme_Justice", "Peddler", "Trader", "Innkeeper", "Banker"]
+	
+	each occupation will have their own set of
+	Story Quests: 3-5 per occupation and stage in ocupation trees,
+		consist of many choices and must be passed before advancing 
+		to the next teir of job. repeatable until you pass them, then 
+		they are no longer repeatable
+	Common Quests: 3-5 per occupation and stage in occupation 
+		trees, quests that are taken when you have not yet reached 
+		the occupation level requirement for the next story quest. 
+		can vary in length and outcomes greatly. are picked randomly 
+		and thus repeatable in that sense.
+	Events: 5-10 per occupation and stage in occupation trees, run on 
+		aseparate command with a much shorter cooldown. have no 
+		options and vary in effects. picked randomly thus may repeat
+
+	
+		Name:				Income:		Expenses:	TierUpDifficulty:
+Path 1	Scavenger			Very Small	Very Small	Very Low
+		Lumberjack			Large		Medium		Very Low
+		Fisherman			Very Small	Medium		Very Low
+		Hunter				Small		Small		N/A
+				
+Path 2	Farmer				Small		Small		Very Low
+		Soldier				Small		Small		Low
+		Captain				Small		Small		Low
+		General				Small		Small		N/A
+				
+Path 3	Writer				Very Small	Very Small	Low
+		Librarian			Small		Medium		Normal
+		Accountant			Medium		Small		Normal
+		Advisor				Large		Medium		N/A
+				
+Path 4	Student				Small		Small		Low
+		Scholor 			Medium		Medium		Normal
+		Disciple			Small		Very Small	Normal
+		Teacher 			Small		Small		N/A
+				
+Path 5	Bartender			Small		Small		Low
+		Server				Small		Medium		Normal
+		Culinary_Attendant	Small		Small		Normal
+		Chef				Medium		Very Small	N/A
+				
+Path 6	Street_Performer	Very Small	Very Small	High
+		Actor				Large		Small		Normal
+		Dancer				Very Small	Small		High
+		Idol				Large		Medium		N/A
+				
+Path 7	Apprentice			Very Small	Very Small	Low
+		Miko				Medium		Small		High
+		Priest				Medium		Medium		Normal
+		Oracle				Large		Very Large	N/A
+				
+Path 8	Thief				Small		Very Small	Low
+		Gangster			Medium		Medium		Normal
+		Assassin			Very Large	Large		Low
+		Executioner			Small		Small		N/A
+				
+Path 9	Outsider			Very Small	Small		Normal
+		Horseman			Very Small	Small		High
+		Beast Tamer			Large		Medium		High
+		Summoner			Very Large	Large		N/A
+				
+Path 10	Lesser_Demon		Small		Very Small	High
+		Greater Demon		Very Large	Small		Normal
+		Elite_Demon			Small		Medium		Normal
+		Demon Lord			Medium		Medium		N/A
+				
+Path 11	Adventurer			Medium		Medium		Normal
+		Mercenary			Medium		Very Small	Normal
+		Freelancer			Medium		Medium		Normal
+		Hero/Heroine		Very Large	Medium		N/A
+				
+Path 12	Mechanic			Medium		Medium		Normal
+		Mason				Medium		Medium		Normal
+		Blacksmith			Large		Very Small	Normal
+		Craftsman			Medium 		Medium		N/A
+				
+Path 13	Linguist			Medium		Medium		Normal
+		Translator			Small		Medium		High
+		Judge				Very Large	Medium		Normal
+		Supreme_Justice		Very Small	Small		N/A
+				
+Path 14	Peddler				Small		Large		High
+		Trader				Medium		Small		Normal
+		Innkeeper			Medium		Small		High
+		Banker				Large 		Small		N/A
+
+	
+	class up level requirements:
+		very fast  =  LV. 8   
+		fast       =  LV. 11  
+		normal     =  LV. 14  
+		slow       =  LV. 17  
+		very slow  =  LV. 20  
+	
+	range of incomes/expenses:
+	note:   r(a, b)  means the income/expenses will be anywhere from a coins to (excluding) b coins
+		unemployed   =   income: 5           =   expenses: r(4, 6)
+		very small   =   income: r(5, 11)    =   expenses: r(1, 6)
+		small        =   income: r(7, 16)    =   expenses: r(3, 11)
+		medium       =   income: r(11, 21)   =   expenses: r(7, 16)
+		large        =   income: r(15, 26)   =   expenses: r(11, 21)
+		very large   =   income: r(20, 31)   =   expenses: r(15, 26)	
+	
+
+
+
+______________Command List_____________:
+fun.Cdecline(),
+fun.Cfight(),
+coin.self(),
+coin.pay(),
+coin.add(),
+coin.remove(),
+coin.set(),
+coin.incomeS(),
+coin.incomeO(),
+coin.expensesS(),
+coin.expensesO(),
+coin.other(),
+command.list(),
+command.web(),
+Nabi.rating(),
+dummy.dummy(),
+Nabi.ExpressionList(),
+Nabi.ExpressionChange(),
+dummy.add(),
+dummy.remove(),
+Osu.NP(),
+Osu.DL(),
+math.add(),
+math.subtract(),
+math.multiply(),
+math.divide(),
+math.random(),
+math.random(),
+math.modulo(),
+command.reload(),
+command.save(),
+math.root(),
+Osu.skin()
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
